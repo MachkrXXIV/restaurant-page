@@ -6,7 +6,7 @@ module.exports = {
   watch: true,
   entry: "./src/index.js",
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -20,9 +20,9 @@ module.exports = {
   },
   plugins: [
     new htmlWebpackPlugin({
-      title: "Webpack App",
+      title: "Restaurant Page",
       filename: "index.html",
-      template: "src/template.html",
+      template: "./src/template.html",
     }),
   ],
   devServer: {
