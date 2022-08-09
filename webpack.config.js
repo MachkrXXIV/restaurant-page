@@ -6,7 +6,7 @@ module.exports = {
   watch: true,
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
+    filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
   },
@@ -26,7 +26,7 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: path.join(__dirname, "dist"),
+    static: { directory: path.resolve(__dirname, "dist") },
     port: 3000,
     open: true,
     hot: true,
