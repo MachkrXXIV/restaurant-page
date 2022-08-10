@@ -3,7 +3,6 @@ const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   mode: "development",
-  watch: true,
   entry: "./src/index.js",
   output: {
     filename: "[name].[contenthash].js",
@@ -26,7 +25,9 @@ module.exports = {
     }),
   ],
   devServer: {
-    static: { directory: path.resolve(__dirname, "dist") },
+    static: {
+      directory: path.join(__dirname, "dist"),
+    },
     port: 3000,
     open: true,
     hot: true,
