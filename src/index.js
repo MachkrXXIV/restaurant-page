@@ -8,4 +8,4 @@ rat.src = Rat;
 const content = document.getElementById("content");
 content.appendChild(rat);
 console.log("is running!");
-const rat
+console.log("run this shit");

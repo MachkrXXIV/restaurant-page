@@ -12,7 +12,7 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  devtool: "inline-source-map",
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -27,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new htmlWebpackPlugin({
-      title: "Restaurant Page",
+      title: "Little Chef's Cuisines",
       filename: "index.html",
       template: "./src/template.html",
     }),

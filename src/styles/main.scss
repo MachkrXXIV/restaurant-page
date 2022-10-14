@@ -1,12 +1,57 @@
+/*
+ * Style Sheet Structure:
+ * Top-Bottom
+ * Outside-In
+ * Left-Right
+ * Block Element Modifier
+ */
+
+// Reminder to import fonts
+
+// Variables
+$bg-primary: hsl(0, 12%, 28%);
+
+// Mixins
+@mixin init-flex($orientation: row, $justify: center, $align: center) {
+  display: flex;
+  flex-flow: $orientation;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Base
+:root {
+  font-size: 16;
+}
+
+* {
+  border: 2px solid red;
+}
+
 body {
+  @include init-flex(row);
   background-color: beige;
   min-width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #content {
-  display: flex;
-  flex-flow: column;
+  @include init-flex(column);
 }
+
+// Header
+.nav {
+  @include init-flex(row, left);
+  min-width: 100vw;
+  font-size: 2rem;
+}
+
+.tab {
+  margin-left: auto;
+  font-size: 1.5rem;
+}
+
+// Home Page
+
+// Menu
+
+// Contact
