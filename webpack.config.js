@@ -1,5 +1,7 @@
 const path = require("path");
 const htmlWebpackPlugin = require("html-webpack-plugin");
+var setDefaultBrowser = require("set-default-browser");
+setDefaultBrowser("firefox");
 
 module.exports = {
   mode: "development",
@@ -8,7 +10,9 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
     clean: true,
+    assetModuleFilename: "[name][ext]",
   },
+  devtool: "inline-source-map",
   module: {
     rules: [
       {

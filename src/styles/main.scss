@@ -1,1 +1,12 @@
+body {
+  background-color: beige;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#content {
+  display: flex;
+  flex-flow: column;
+}
