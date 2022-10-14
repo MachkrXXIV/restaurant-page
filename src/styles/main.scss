@@ -29,7 +29,7 @@ $bg-primary: hsl(0, 12%, 28%);
 }
 
 body {
-  @include init-flex(row);
+  @include init-flex;
   background-color: beige;
   min-width: 100vw;
 }
@@ -42,12 +42,23 @@ body {
 .nav {
   @include init-flex(row, left);
   min-width: 100vw;
+  padding: 1rem;
+  background-color: gainsboro;
   font-size: 2rem;
-}
 
-.tab {
-  margin-left: auto;
-  font-size: 1.5rem;
+  &__tab {
+    @include init-flex(row);
+    margin-left: auto;
+    gap: 0.2rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  &__item {
+    padding: 0.25rem 0.5rem;
+    border-radius: 1rem;
+    color: red;
+  }
 }
 
 // Home Page
