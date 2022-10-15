@@ -9,7 +9,11 @@
 // Reminder to import fonts
 
 // Variables
-$bg-primary: hsl(0, 12%, 28%);
+$bg-primary: hsl(67, 81%, 96%);
+$nav-overlay: hsla(0, 16%, 17%, 0.5);
+$logo-font: hsla(60, 18%, 84%, 0.8);
+$tab-font: hsla(60, 33%, 96%, 0.8);
+$home-overlay: hsla(0, 4%, 5%, 0.4);
 
 // Mixins
 @mixin init-flex($orientation: row, $justify: center, $align: center) {
@@ -24,44 +28,84 @@ $bg-primary: hsl(0, 12%, 28%);
   font-size: 16;
 }
 
-* {
+*,
+*::before,
+*::after {
   border: 2px solid red;
+  box-sizing: border-box;
 }
 
 body {
-  @include init-flex;
-  background-color: beige;
-  min-width: 100vw;
+  background-color: $bg-primary;
+  height: 100vh;
+  width: 100vw;
 }
 
-#content {
+.content {
   @include init-flex(column);
+  background-image: url("../imgs/ambient.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 // Header
 .nav {
-  @include init-flex(row, left);
-  min-width: 100vw;
+  @include init-flex(row, space-between, center);
+  width: 100vw;
   padding: 1rem;
-  background-color: gainsboro;
+  margin: 1rem;
+  background-color: $nav-overlay;
   font-size: 2rem;
+  color: $logo-font;
 
   &__tab {
     @include init-flex(row);
     margin-left: auto;
     gap: 0.2rem;
     font-size: 1.5rem;
+    color: $tab-font;
     cursor: pointer;
   }
 
   &__item {
     padding: 0.25rem 0.5rem;
     border-radius: 1rem;
-    color: red;
+  }
+
+  &--sticky {
+    position: sticky;
   }
 }
 
 // Home Page
+.home {
+  @include init-flex(column, left);
+  width: min(40rem, 80%);
+  min-height: 100%;
+  height: 80vh;
+  margin: 1rem;
+  background-color: $home-overlay;
+  color: white;
+  border: 2px solid blue;
+
+  &__slogan {
+    font-size: 3rem;
+  }
+
+  &__order {
+    font-size: 2rem;
+  }
+
+  &--img {
+    width: 80%;
+  }
+}
+
+.container__home {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
 
 // Menu
 
