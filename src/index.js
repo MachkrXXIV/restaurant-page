@@ -15,9 +15,18 @@ ambient.src = Ambient;
 // Query selectors
 const content = document.getElementById("content");
 const home = document.querySelector(".home");
+const slogan = document.querySelector(".home__slogan");
+const order = document.querySelector(".home__order");
 
-// Add images to
+// Add to page
+home.append(slogan);
 home.appendChild(rat);
+home.append(order);
+
+// Add classes(styling)
+home.classList.add("home--shadow");
+slogan.classList.add("home__slogan");
+order.classList.add("home__order");
 
 rat.classList.add("home--img");
 
