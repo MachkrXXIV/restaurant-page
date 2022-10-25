@@ -13,7 +13,8 @@ $bg-primary: hsl(67, 81%, 96%);
 $nav-overlay: hsla(0, 16%, 17%, 0.5);
 $logo-font: hsla(60, 18%, 84%, 0.8);
 $tab-font: hsla(60, 33%, 96%, 0.8);
-$home-overlay: hsla(0, 4%, 5%, 0.6);
+$home-overlay: hsla(0, 22%, 92%, 0.9);
+$home-font-color: hsla(0, 9%, 9%, 0.9);
 
 // Mixins
 @mixin init-flex($orientation: row, $justify: center, $align: center) {
@@ -25,7 +26,7 @@ $home-overlay: hsla(0, 4%, 5%, 0.6);
 
 // Base
 :root {
-  color: $bg-primary;
+  color: black;
   font-size: 16;
 }
 
@@ -44,6 +45,7 @@ body {
 
 .content {
   @include init-flex(column);
+  position: relative;
 }
 
 // Header
@@ -72,19 +74,20 @@ body {
 
   &--sticky {
     position: sticky;
+    top: 1rem;
   }
 }
 
-// Home Page
+// Home Page also pls add hover effect for home
 .home {
-  @include init-flex(column, left);
+  @include init-flex(column, space-around);
   width: min(40rem, 80%);
   min-height: 100%;
   height: 80vh;
   margin: 1rem;
   background-color: $home-overlay;
-  color: white;
-  border: 2px solid blue;
+  border-radius: 5% / 5%;
+  color: $home-font-color;
 
   &__slogan {
     font-size: 3rem;
@@ -95,9 +98,30 @@ body {
     text-align: center;
   }
 
+  &__pick-up {
+    color: $home-overlay;
+    font-weight: 700;
+    background-color: $nav-overlay;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+
+  &__delivery {
+    color: $home-overlay;
+    font-weight: 700;
+    background-color: $nav-overlay;
+    padding: 0.25rem 0.7rem;
+    border-radius: 2rem;
+    cursor: pointer;
+  }
+
   &--img {
-    width: 80%;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 90%;
+    border-radius: 20%;
+    border-bottom-left-radius: 5%;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+      rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
 
   &--shadow {
@@ -111,11 +135,17 @@ body {
   display: flex;
   justify-content: center;
   width: 100vw;
+  margin-top: -20rem;
+  padding-top: 20rem;
 
   //img
   background-image: url("../imgs/ambient.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.container__nav {
+  position: relative;
 }
 
 // Menu
