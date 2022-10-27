@@ -1,9 +1,10 @@
 import "./styles/reset.scss";
 import "./styles/main.scss";
 import loadHome from "./pages/home";
+import loadHeader from "./pages/header";
 
 /**
- * @desc On first load, creates container and start on home page
+ * @desc On first load, creates container, nav, and start on home page
  */
 function initializePage() {
   const content = document.querySelector(".content");
@@ -12,6 +13,7 @@ function initializePage() {
   container.classList.add(".container__main");
 
   content.appendChild(container);
+  content.appendChild(loadHeader());
   loadHome();
 }
 
