@@ -15,6 +15,7 @@ $logo-font: hsla(60, 18%, 84%, 0.8);
 $tab-font: hsla(60, 33%, 96%, 0.8);
 $home-overlay: hsla(0, 22%, 92%, 0.9);
 $home-font-color: hsla(0, 9%, 9%, 0.9);
+$numMenuItems: 6;
 
 // Mixins
 @mixin init-flex($orientation: row, $justify: center, $align: center) {
@@ -49,7 +50,7 @@ $home-font-color: hsla(0, 9%, 9%, 0.9);
 
 body {
   background-color: $bg-primary;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 }
 
@@ -135,9 +136,36 @@ body {
   }
 }
 
+// Menu
 .menu {
   @include init-flex(column, space-around);
   @include default-styling;
+  width: Max(500px, 80%);
+
+  &__gallery {
+    @include init-flex(row, center, flex-end);
+    flex-wrap: wrap;
+    overflow-y: scroll;
+  }
+
+  &__item {
+    @include init-flex(column);
+    height: 50%;
+    max-width: 100%;
+    border: 2px solid blue;
+    text-align: center;
+
+    &Img {
+      height: 200px;
+      width: Min(200px, 80%);
+      max-width: 100%;
+    }
+
+    &Name {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+  }
 }
 
 .container__main {
@@ -152,7 +180,3 @@ body {
   background-size: cover;
   background-position: center;
 }
-
-// Menu
-
-// Contact
