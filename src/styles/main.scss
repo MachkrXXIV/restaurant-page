@@ -146,14 +146,16 @@ body {
     @include init-flex(row, center, flex-end);
     flex-wrap: wrap;
     overflow-y: scroll;
+    flex: 1 1 0px;
   }
 
   &__item {
     @include init-flex(column);
     height: 50%;
-    max-width: 100%;
+    width: calc(100% / 3);
     border: 2px solid blue;
     text-align: center;
+    overflow-wrap: break-word;
 
     &Img {
       height: 200px;
@@ -165,6 +167,18 @@ body {
       font-size: 1.2rem;
       font-weight: 700;
     }
+  }
+}
+
+// menu small screen
+@media (max-width: 600px) {
+  .menu__gallery {
+    align-items: center;
+    width: 100%;
+  }
+
+  .menu__item {
+    width: 100%;
   }
 }
 
