@@ -18,7 +18,7 @@ function initializePage() {
   content.appendChild(loadHeader());
   content.appendChild(container);
   // changeContent(container, loadHome());
-  changeContent(container, loadMenu());
+  // changeContent(container, loadMenu());
 }
 
 initializePage();
