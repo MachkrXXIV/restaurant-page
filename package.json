@@ -31,6 +31,7 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.15.1",
     "set-default-browser": "^1.1.2"
   }
 }

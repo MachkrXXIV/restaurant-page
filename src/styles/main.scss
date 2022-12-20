@@ -183,7 +183,40 @@ body {
 }
 
 // Contact
+.contact {
+  @include init-flex(row, center, flex-start);
+  @include default-styling;
+  padding: 1rem;
+  width: 80vw;
+  gap: 2rem;
 
+  &__subtitle {
+    font-size: 5vh;
+  }
+
+  &__form {
+    @include init-flex(column, flex-start, flex-start);
+    font-size: 1.2rem;
+    width: 100%;
+
+    textarea {
+      max-width: 100%;
+    }
+  }
+
+  &__information {
+    width: Max(500px, 100%);
+    height: 100%;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 2;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 75%;
+}
 
 .container__main {
   display: flex;
