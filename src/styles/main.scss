@@ -35,6 +35,11 @@ $numMenuItems: 6;
   color: $home-font-color;
 }
 
+@mixin pill-styling {
+  border-radius: 1rem;
+  padding: 0.25rem 0.75rem;
+}
+
 // Base
 :root {
   color: black;
@@ -191,17 +196,36 @@ body {
   gap: 2rem;
 
   &__subtitle {
-    font-size: 5vh;
+    font-size: 4vh;
+    color: $bg-primary;
   }
 
   &__form {
     @include init-flex(column, flex-start, flex-start);
-    font-size: 1.2rem;
-    width: 100%;
+    width: fit-content;
+    height: 100%;
+    padding: 1rem;
+    gap: 0.5rem;
+    background-color: $nav-overlay;
+    border-radius: 2rem;
+    font-size: 1rem;
+
+    .field {
+      @include pill-styling;
+      font-size: 1rem;
+      resize: none;
+    }
 
     textarea {
       max-width: 100%;
     }
+  }
+
+  &__submit {
+    @include pill-styling;
+    color: $logo-font;
+    background-color: $home-font-color;
+    font-size: 1.5rem;
   }
 
   &__information {
@@ -210,6 +234,13 @@ body {
     font-size: 1.2rem;
     text-align: center;
     line-height: 2;
+  }
+}
+
+@media (max-width: 800px) {
+  .contact__information {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
 

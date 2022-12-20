@@ -10,7 +10,7 @@ const createField = function (name, isTextArea, type = "text") {
 
   if (isTextArea) {
     field = document.createElement("textarea");
-    field.rows = 9;
+    field.rows = 12;
     field.cols = 30;
   } else {
     field = document.createElement("input");
@@ -45,7 +45,7 @@ const loadContact = function () {
   const hours = document.createElement("p");
   const phone = document.createElement("p");
   const nameField = createField("name");
-  const emailField = createField("email");
+  const emailField = createField("email", false, "email");
   const messageField = createField("message", true);
   const submitBtn = document.createElement("button");
 
@@ -67,7 +67,7 @@ const loadContact = function () {
   );
 
   // text
-  address.textContent = "2190 N College Avenue";
+  address.textContent = "2190 N College Avenue, Fayetteville, AR 72701";
   hours.textContent = "Mon-Thur 10:00am-10:00pm | Fri-Sun 11:00am-10:00pm";
   phone.textContent = "555-555-5555";
   subtitle.textContent = "Shoot the rat gang a message!";
