@@ -49,7 +49,6 @@ $numMenuItems: 6;
 *,
 *::before,
 *::after {
-  border: 2px solid red;
   box-sizing: border-box;
 }
 
@@ -158,7 +157,6 @@ body {
     @include init-flex(column);
     height: 50%;
     width: calc(100% / 3);
-    border: 2px solid blue;
     text-align: center;
     overflow-wrap: break-word;
 
